@@ -1,38 +1,24 @@
-<html>
-    <head>
-        <title>Create</title>
-    </head>
-    <body>
-        <h1>New Quiz Wizard</h1>
-        <form action="" method="post" novalidate>
-            {{form.hidden_tag()}}
-            <p>
-                {{ form.O_question1.label }}<br>
-                {{ form.O_question1(size=32) }}<br>
-            </p>            
+{% extends "layout.html" %}
 
-            <p>
-                {{ form.A_question1.label }}<br>
-                {{ form.A_question1(size=16) }}<br>
-            </p>            
-
-            <p>
-                {{ form.B_question1.label }}<br>
-                {{ form.B_question1(size=16) }}<br>
-            </p>            
-
-            <p>
-                {{ form.C_question1.label }}<br>
-                {{ form.C_question1(size=16) }}<br>
-            </p>            
-
-            <p>
-                {{ form.D_question1.label }}<br>
-                {{ form.D_question1(size=16) }}<br>
-            </p>            
-
-            <p>{{ form.submit() }}</p>
-
-        </form>
-    </body>
-</html>
+{% block content %}
+    <h1>New Quiz Wizard</h1>
+    <form action="" method="post" novalidate>
+        {{form.hidden_tag()}}
+        <p>
+            {{ form.ques.label }}<br>
+            {{ form.ques(size=32) }}<br>
+            {{ form.A_ques.label }}<br>
+            {{ form.A_ques(size=16) }}<br>
+            {{ form.B_ques.label }}<br>
+            {{ form.B_ques(size=16) }}<br>
+            {{ form.C_ques.label }}<br>
+            {{ form.C_ques(size=16) }}<br>
+            {{ form.D_ques.label }}<br>
+            {{ form.D_ques(size=16) }}<br>
+            {{ form.answ.label }}<br>
+            {{ form.answ(size=16) }}<br>
+        </p>            
+        <p>{{ form.submit() }}</p>
+        <p>{{ form.nxt() }}</p>
+    </form>
+{% endblock %}

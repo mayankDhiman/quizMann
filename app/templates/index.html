@@ -1,8 +1,7 @@
-<html>
-    <head>
-        <title>QuizMann!</title>
-    </head>
-    <body>
-        <h1>Hello folks!</h1>
-    </body>
-</html>
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Welcome user!</h1>
+    <a href="/displayquiz">Take a Quiz!</a>
+    <a href="/addquiz">Set a Quiz!</a>
+{% endblock %}

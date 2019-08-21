@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <form action="/postQuiz" method="POST" novalidate>
+        <ol>
+        {% for q in questions %}
+            <li> <b> {{q.question}} </b> </li>
+            <br>
+                <input type="radio" name = "question_{{q.id}}" value="A" id = "{{q.id}}optionA">
+                <i>A.</i> <label for= "{{q.id}}optionA" > {{q.optionA}} </label>
+            <br>
+                <input type="radio" name = "question_{{q.id}}" value="B" id = "{{q.id}}optionB">
+                <i>B.</i> <label for = "{{q.id}}optionA" > {{q.optionB}} </label>
+            <br>
+                <input type="radio" name = "question_{{q.id}}" value="C" id = "{{q.id}}optionC">
+                <i>C.</i> <label for= "{{q.id}}optionA" > {{q.optionC}} </label>
+            <br>
+                <input type="radio" name = "question_{{q.id}}" value="D" id = "{{q.id}}optionC">
+                <i>D.</i> <label for= "{{q.id}}optionA" > {{q.optionD}} </label>
+            <br><br><br>
+        {% endfor %}
+        </ol>
+        <input type="submit" value="Submit Response">
+    </form>
+{% endblock %}
